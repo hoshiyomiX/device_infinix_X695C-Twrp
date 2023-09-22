@@ -1,4 +1,8 @@
 # mount point               fstype    device                                                                flags
+/product                    emmc      /dev/block/mapper/product                                             flags=display="Product";backup=1;flashimg=1;slotselect
+/system                     emmc      /dev/block/mapper/system                                              flags=display="System";backup=1;flashimg=1;slotselect
+/system_ext                 emmc      /dev/block/mapper/system_ext                                          flags=display="System_ext";backup=1;flashimg=1;slotselect
+/vendor                     emmc      /dev/block/mapper/vendor                                              flags=display="Vendor";backup=1;flashimg=1;slotselect
 /tranfs                     ext4      /dev/block/platform/bootdevice/by-name/tranfs                         flags=display="Tranfs";
 /mnt/vendor/protect_f       ext4      /dev/block/platform/bootdevice/by-name/protect1                       flags=display="Protect_f";backup=1;
 /mnt/vendor/protect_s       ext4      /dev/block/platform/bootdevice/by-name/protect2                       flags=display="Protect_s";backup=1;
