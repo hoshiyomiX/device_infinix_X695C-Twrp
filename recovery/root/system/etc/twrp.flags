@@ -1,7 +1,7 @@
 # Mount Point            fstype    Device                                                   Flags
 /system_root              ext4     /dev/block/dm-3                                          flags=display="system";backup=1;flashimg=1;wipeingui
 /boot                     emmc     /dev/block/platform/bootdevice/by-name/boot              flags=display="boot":backup=1;flashimg=1;slotselect
-/boot_para                emmc     /dev/block/platform/bootdevice/by-name/boot_para		      flags=display="boot_para";backup=1
+/boot_para                emmc     /dev/block/platform/bootdevice/by-name/boot_para         flags=display="boot_para";backup=1;
 /data                     f2fs     /dev/block/by-name/userdata                              flags=length=-67108
 /dtbo                     emmc     /dev/block/platform/bootdevice/by-name/dtbo              flags=display="dtbo":backup=1;flashimg=1;slotselect
 /vendor_boot              emmc     /dev/block/platform/bootdevice/by-name/vendor_boot       flags=display="vendor_Boot";flashimg=1;backup=1;slotselect;
