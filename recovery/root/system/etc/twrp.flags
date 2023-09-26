@@ -12,22 +12,16 @@
 /tranfs                   ext4     /dev/block/platform/bootdevice/by-name/tranfs            flags=display=tranfs;
 
 ## Dynamic Partitions Mounts
-/system                   ext4     /dev/block/dm-3                                          flags=display="System logical"
-/vendor                   ext4     /dev/block/dm-2                                          flags=display="Vendor logical"
-/product                  ext4     /dev/block/dm-1                                          flags=display="Product logical"
-/system_ext               ext4     /dev/block/dm-0                                          flags=display="System EXT logical"
+/system                   ext4     /dev/block/dm-3                                          flags=display="System"
+/vendor                   ext4     /dev/block/dm-2                                          flags=display="Vendor"
+/product                  ext4     /dev/block/dm-1                                          flags=display="Product"
+/system_ext               ext4     /dev/block/dm-0                                          flags=display="System EXT"
 
-## Dynamic Partitions (A)
-/system_a                 emmc     /dev/block/mapper/system_a                               flags=display="System A";backup=1;flashimg=1;wipeingui
-/vendor_a                 emmc     /dev/block/mapper/vendor_a                               flags=display="Vendor A";backup=1;flashimg=1;wipeingui
-/product_a                emmc     /dev/block/mapper/product_a                              flags=display="Product A";backup=1;flashimg=1;wipeingui
-/system_ext_a             emmc     /dev/block/mapper/system_ext_a                           flags=display="System EXT A";backup=1;flashimg=1;wipeingui
-
-## Dynamic Partitions (B)
-/system_b                 emmc     /dev/block/mapper/system_b                               flags=display="System B";backup=1;flashimg=1;wipeingui
-/vendor_b                 emmc     /dev/block/mapper/vendor_b                               flags=display="Vendor B";backup=1;flashimg=1;wipeingui
-/product_b                emmc     /dev/block/mapper/product_b                              flags=display="Product B";backup=1;flashimg=1;wipeingui
-/system_ext_b             emmc     /dev/block/mapper/system_ext_b                           flags=display="System EXT B";backup=1;flashimg=1;wipeingui
+## Dynamic Partitions (Logical)
+/system                   emmc     /dev/block/mapper/system                                 flags=display="System";backup=1;flashimg=1;slotselect;wipeingui
+/vendor                   emmc     /dev/block/mapper/vendor                                 flags=display="Vendor";backup=1;flashimg=1;slotselect;wipeingui
+/product                  emmc     /dev/block/mapper/product                                flags=display="Product";backup=1;flashimg=1;slotselect;wipeingui
+/system_ext               emmc     /dev/block/mapper/system_ext                             flags=display="System EXT";backup=1;flashimg=1;slotselect;wipeingui
 
 ## Sensitive Data (IMEI, MAC, ....)
 /protect_f                ext4     /dev/block/platform/bootdevice/by-name/protect1          flags=display=protect_f
