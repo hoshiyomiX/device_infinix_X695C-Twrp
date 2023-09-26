@@ -1,33 +1,39 @@
 # Mount Point            fstype    Device                                                   Flags
 
-## User Root
+## UserWritable
 /boot                     emmc     /dev/block/platform/bootdevice/by-name/boot              flags=display="Boot";backup=1;flashimg=1;slotselect
 /boot_para                emmc     /dev/block/platform/bootdevice/by-name/boot_para         flags=display="Boot Para";backup=1;
 /data                     f2fs     /dev/block/by-name/userdata                              flags=length=-67108
 /dtbo                     emmc     /dev/block/platform/bootdevice/by-name/dtbo              flags=display="dtbo";backup=1;flashimg=1;slotselect
 /lk                       emmc     /dev/block/platform/bootdevice/by-name/lk                flags=display="Bootloader";backup=1;flashimg=1;slotselect
-/logo                     emmc     /dev/block/platform/bootdevice/by-name/logo              flags=display="logo";backup=1;flashimg=1;slotselect
+/logo                     emmc     /dev/block/platform/bootdevice/by-name/logo              flags=display="Logo";backup=1;flashimg=1;slotselect
 /vendor_boot              emmc     /dev/block/platform/bootdevice/by-name/vendor_boot       flags=display="Vendor Boot";flashimg=1;backup=1;slotselect;
 /vbmeta                   emmc     /dev/block/platform/bootdevice/by-name/vbmeta            flags=display="vbmeta";backup=1;flashimg=1;slotselect;
 /tranfs                   ext4     /dev/block/platform/bootdevice/by-name/tranfs            flags=display=tranfs;
 
 ## Dynamic Partitions Mounts
-/system                   ext4     /dev/block/dm-3                                          flags=display="System"
-/vendor                   ext4     /dev/block/dm-2                                          flags=display="Vendor"
-/product                  ext4     /dev/block/dm-1                                          flags=display="Product"
-/system_ext               ext4     /dev/block/dm-0                                          flags=display="System EXT"
+/system                   ext4     /dev/block/dm-3                                          flags=display="System logical"
+/vendor                   ext4     /dev/block/dm-2                                          flags=display="Vendor logical"
+/product                  ext4     /dev/block/dm-1                                          flags=display="Product logical"
+/system_ext               ext4     /dev/block/dm-0                                          flags=display="System EXT logical"
 
 ## Dynamic Partitions (A)
-/system_a                 emmc     /dev/block/mapper/system_a                               flags=display="System";backup=1;flashimg=1;wipeingui
-/vendor_a                 emmc     /dev/block/mapper/vendor_a                               flags=display="Vendor";backup=1;flashimg=1;wipeingui
-/product_a                emmc     /dev/block/mapper/product_a                              flags=display="Product";backup=1;flashimg=1;wipeingui
-/system_ext_a             emmc     /dev/block/mapper/system_ext_a                           flags=display="System EXT";backup=1;flashimg=1;wipeingui
+/system_a                 emmc     /dev/block/mapper/system_a                               flags=display="System A";backup=1;flashimg=1;wipeingui
+/vendor_a                 emmc     /dev/block/mapper/vendor_a                               flags=display="Vendor A";backup=1;flashimg=1;wipeingui
+/product_a                emmc     /dev/block/mapper/product_a                              flags=display="Product A";backup=1;flashimg=1;wipeingui
+/system_ext_a             emmc     /dev/block/mapper/system_ext_a                           flags=display="System EXT A";backup=1;flashimg=1;wipeingui
+
+## Dynamic Partitions (B)
+/system_b                 emmc     /dev/block/mapper/system_b                               flags=display="System B";backup=1;flashimg=1;wipeingui
+/vendor_b                 emmc     /dev/block/mapper/vendor_b                               flags=display="Vendor B";backup=1;flashimg=1;wipeingui
+/product_b                emmc     /dev/block/mapper/product_b                              flags=display="Product B";backup=1;flashimg=1;wipeingui
+/system_ext_b             emmc     /dev/block/mapper/system_ext_b                           flags=display="System EXT B";backup=1;flashimg=1;wipeingui
 
 ## Sensitive Data (IMEI, MAC, ....)
-/protect_f                ext4     /dev/block/platform/bootdevice/by-name/protect1          flags=display=protect_f;backup=1;
-/protect_s                ext4     /dev/block/platform/bootdevice/by-name/protect2          flags=display=protect_s;backup=1;
-/nvdata                   ext4     /dev/block/platform/bootdevice/by-name/nvdata            flags=display=nvdata;backup=1;
-/persist                  ext4     /dev/block/platform/bootdevice/by-name/persist           flags=display=persist;backup=1;
+/protect_f                ext4     /dev/block/platform/bootdevice/by-name/protect1          flags=display=protect_f
+/protect_s                ext4     /dev/block/platform/bootdevice/by-name/protect2          flags=display=protect_s
+/nvdata                   ext4     /dev/block/platform/bootdevice/by-name/nvdata            flags=display=nvdata
+/persist                  ext4     /dev/block/platform/bootdevice/by-name/persist           flags=display=persist
 
 ## Mount (IMEI, SIM, Device Info)
 /protect_f                emmc     /dev/block/platform/bootdevice/by-name/protect1          flags=display=protect_f;backup=1;
@@ -38,7 +44,7 @@
 /nvram                    emmc     /dev/block/platform/bootdevice/by-name/nvram             flags=display=nvram;backup=1;
 
 ## Factory Reset Protection
-/persistent               emmc     /dev/block/platform/bootdevice/by-name/frp               flags=display=persistent;backup=1;
+/persistent               emmc     /dev/block/platform/bootdevice/by-name/frp               flags=display=persistent;backup=1;slotselect;
 
 ## Firmware
 /proinfo                  emmc     /dev/block/platform/bootdevice/by-name/proinfo           flags=display=proinfo
