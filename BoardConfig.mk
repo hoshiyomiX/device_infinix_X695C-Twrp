@@ -169,7 +169,7 @@ TW_INCLUDE_REPACKTOOLS := true
 TW_FRAMERATE := 60
 
 # Maintainer/Version
-TW_DEVICE_VERSION := By_Gilangeagea
+TW_DEVICE_VERSION := By_Gilanggegea
 
 # logcd
 TWRP_INCLUDE_LOGCAT := true
