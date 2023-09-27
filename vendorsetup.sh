@@ -38,7 +38,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_USE_XZ_UTILS=1
 	
 	# OTA
-    export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
+    #export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
     export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
 
 	# encryption
