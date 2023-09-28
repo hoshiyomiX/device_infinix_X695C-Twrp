@@ -3,39 +3,32 @@
 ## UserWritable
 /boot                     emmc     /dev/block/platform/bootdevice/by-name/boot              flags=display="Boot";backup=1;flashimg=1;slotselect
 /boot_para                emmc     /dev/block/platform/bootdevice/by-name/boot_para         flags=display="Boot Para";backup=1;
-/data                     f2fs     /dev/block/by-name/userdata                              flags=length=-67108
 /lk                       emmc     /dev/block/platform/bootdevice/by-name/lk                flags=display="Bootloader";backup=1;flashimg=1;slotselect
-/dtbo                     emmc     /dev/block/platform/bootdevice/by-name/dtbo              flags=display="dtbo";backup=1;flashimg=1;slotselect
+/dtbo                     emmc     /dev/block/platform/bootdevice/by-name/dtbo              flags=display="DTBO";backup=1;flashimg=1;slotselect
 /logo                     emmc     /dev/block/platform/bootdevice/by-name/logo              flags=display="Logo";backup=1;flashimg=1;slotselect
 /vendor_boot              emmc     /dev/block/platform/bootdevice/by-name/vendor_boot       flags=display="Vendor Boot";flashimg=1;backup=1;slotselect;
-/vbmeta                   emmc     /dev/block/platform/bootdevice/by-name/vbmeta            flags=display="vbmeta";backup=1;flashimg=1;slotselect;
+/vbmeta                   emmc     /dev/block/platform/bootdevice/by-name/vbmeta            flags=display="Vbmeta";backup=1;flashimg=1;slotselect;
+/vbmeta_system            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_system     flags=display="Vbmeta System";flashimg=1;backup=1;slotselect;
+/vbmeta_vendor            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_vendor     flags=display="Vbmeta Vendor";flashimg=1;backup=1;slotselect;
 /tranfs                   ext4     /dev/block/platform/bootdevice/by-name/tranfs            flags=display=tranfs;
 
-## Dynamic Partitions Default Mounts
+## Dynamic Partitions
 /system                   ext4     /dev/block/dm-3                                          flags=display="System"
+/system_a                 emmc     /dev/block/mapper/system_a                               flags=display="System";backup=1;flashimg=1;wipeingui
 /vendor                   ext4     /dev/block/dm-2                                          flags=display="Vendor"
+/vendor_a                 emmc     /dev/block/mapper/vendor_a                               flags=display="Vendor";backup=1;flashimg=1;wipeingui
 /product                  ext4     /dev/block/dm-1                                          flags=display="Product"
+/product_a                emmc     /dev/block/mapper/product_a                              flags=display="Product";backup=1;flashimg=1;wipeingui
 /system_ext               ext4     /dev/block/dm-0                                          flags=display="System_ext"
+/system_ext_a             emmc     /dev/block/mapper/system_ext_a                           flags=display="System_ext";backup=1;flashimg=1;wipeingui
 
-## Dynamic Partitions (a)
-/system_a                 emmc     /dev/block/mapper/system_a                               flags=display="System";backup=1;flashimg=1;slotselect;wipeingui
-/vendor_a                 emmc     /dev/block/mapper/vendor_a                               flags=display="Vendor";backup=1;flashimg=1;slotselect;wipeingui
-/product_a                emmc     /dev/block/mapper/product_a                              flags=display="Product";backup=1;flashimg=1;slotselect;wipeingui
-/system_ext_a             emmc     /dev/block/mapper/system_ext_a                           flags=display="System_ext";backup=1;flashimg=1;slotselect;wipeingui
-
-## Sensitive Data (IMEI, MAC, ....)
-/mnt/vendor/protect_f     ext4     /dev/block/platform/bootdevice/by-name/protect1          flags=display=protect_f
-/mnt/vendor/protect_s     ext4     /dev/block/platform/bootdevice/by-name/protect2          flags=display=protect_s
-/mnt/vendor/nvdata        ext4     /dev/block/platform/bootdevice/by-name/nvdata            flags=display=nvdata
-/mnt/vendor/persist       ext4     /dev/block/platform/bootdevice/by-name/persist           flags=display=persist
-/nvram                    ext4     /dev/block/platform/bootdevice/by-name/nvram             flags=display=nvram
-
-## Mount (IMEI, SIM, Device Info)
-/mnt/vendor/protect_f     emmc     /dev/block/platform/bootdevice/by-name/protect1          flags=display=protect_f;backup=1;
-/mnt/vendor/protect_s     emmc     /dev/block/platform/bootdevice/by-name/protect2          flags=display=protect_s;backup=1;
-/mnt/vendor/nvdata        emmc     /dev/block/platform/bootdevice/by-name/nvdata            flags=display=nvdata;backup=1;
-/mnt/vendor/nvcfg         emmc     /dev/block/platform/bootdevice/by-name/nvcfg             flags=display=nvcfg;backup=1;
-/mnt/vendor/persist       emmc     /dev/block/platform/bootdevice/by-name/persist           flags=display=persist;backup=1;
+## Sensitif Data (IMEI, SIM, Device Info)
+# below four partitions are ext4, but we are using only for backup so emmc
+/protect_f                emmc     /dev/block/platform/bootdevice/by-name/protect1          flags=display=protect_f;backup=1;
+/protect_s                emmc     /dev/block/platform/bootdevice/by-name/protect2          flags=display=protect_s;backup=1;
+/nvdata                   emmc     /dev/block/platform/bootdevice/by-name/nvdata            flags=display=nvdata;backup=1;
+/nvcfg                    emmc     /dev/block/platform/bootdevice/by-name/nvcfg             flags=display=nvcfg;backup=1;
+/persist                  emmc     /dev/block/platform/bootdevice/by-name/persist           flags=display=persist;backup=1;
 /nvram                    emmc     /dev/block/platform/bootdevice/by-name/nvram             flags=display=nvram;backup=1;
 
 ## Factory Reset Protection
