@@ -16,11 +16,11 @@
 /vbmeta_vendor            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_vendor     flags=display="Vbmeta Vendor";backup=1;flashimg=1;slotselect;
 /tranfs                   ext4     /dev/block/platform/bootdevice/by-name/tranfs            flags=display="Tranfs";
 
-## Dynamic Partitions
-/system_image             emmc     /dev/block/mapper/system                                 flags=display="System image";backup=1;flashimg=1;slotselect;
-/vendor_image             emmc     /dev/block/mapper/vendor                                 flags=display="Vendor image";backup=1;flashimg=1;slotselect;
-/product_image            emmc     /dev/block/mapper/product                                flags=display="Product image";backup=1;flashimg=1;slotselect;
-/system_ext_image         emmc     /dev/block/mapper/system_ext                             flags=display="System_ext image";backup=1;flashimg=1;slotselect;
+## Dynamic Partitions Image
+/system_image             emmc     /dev/block/mapper/system                                 flags=display="System image";backup=1;flashimg=1;slotselect;wipeingui
+/vendor_image             emmc     /dev/block/mapper/vendor                                 flags=display="Vendor image";backup=1;flashimg=1;slotselect;wipeingui
+/product_image            emmc     /dev/block/mapper/product                                flags=display="Product image";backup=1;flashimg=1;slotselect;wipeingui
+/system_ext_image         emmc     /dev/block/mapper/system_ext                             flags=display="System_ext image";backup=1;flashimg=1;slotselect;wipeingui
 
 ## Sensitif Data (IMEI, SIM, Device Info)
 # below four partitions are ext4, but we are using only for backup so emmc
