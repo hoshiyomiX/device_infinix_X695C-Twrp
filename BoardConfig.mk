@@ -179,3 +179,9 @@ PLATFORM_VERSION := 20.1.0
 
 # Hack to get keymaster to recognize the key files
 VENDOR_SECURITY_PATCH := 2021-08-01
+
+# lptools
+TW_EXCLUDE_LPTOOLS := true
+RECOVERY_BINARY_SOURCE_FILES += \
+    $(TARGET_OUT_EXECUTABLES)/lptools
+TWRP_REQUIRED_MODULES += lptools
