@@ -54,7 +54,7 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl-recovery
     
 PRODUCT_PACKAGES_DEBUG += \
-    bootctrl.mt6768
+    bootctrl.mt6785
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
